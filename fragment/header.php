@@ -12,6 +12,5 @@ echo '<head>
   <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <!-- JS -->
    <script src="materialize/js/canvasjs.min.js"></script>
-</head>';
-
+  </head>';
 ?>

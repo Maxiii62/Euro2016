@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	include_once('helper.php');
 
 	const PATH_WEBSERVICES = '../ws';

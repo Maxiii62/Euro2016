@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `rencontre` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Equipe1` varchar(30) DEFAULT NULL,
   `Equipe2` varchar(30) DEFAULT NULL,
+  `idTour` INT DEFAULT NULL,
   `DateMatch` date DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -127,6 +128,24 @@ INSERT INTO `user` (`ID`, `Nom`, `Prenom`, `MotDePasse`, `Mail`, `DateNaissance`
 (1, 'Eduardo', 'Cavalcanti', '0000', 'eduardo.caval@gmail.com', '0000-00-00', 'Edu', 0),
 (2, 'Raija', 'Peltomaa', '0000', 'toto@gmail.com', '0000-00-00', 'RaiPel', 1),
 (3, 'Phan', 'Thi', '0000', 'phan.thi@gmail.com', '0000-00-00', 'Phaaan', 0);
+
+CREATE TABLE IF NOT EXISTS `tour` (
+  `Idtour` int(11) NOT NULL AUTO_INCREMENT,
+  `Nomtour` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`Idtour`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+INSERT INTO `tour` (`idtour`, `nomtour`) VALUES
+(1, 'POULE A'),
+(2, 'POULE B'),
+(3, 'POULE C'),
+(4, 'POULE D'),
+(5, 'POULE E'),
+(6, 'POULE F'),
+(7, '1/8 finale'),
+(8, '1/4 finale'),
+(9, '1/2 finale'),
+(10, 'finale');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

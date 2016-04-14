@@ -24,8 +24,39 @@ $( "#sbmtCnx" ).click(function() {
                            });
                        };
                    }else{
-                     $("#badRQ").val("Les identifiants fournis se permettent pas de connecter");
+                     Materialize.toast('Mauvaises informations de connexions', 4000)
                    }
                }
           });
 });
+
+function chargerTours(){
+    $.ajax({
+      method : "POST",
+      url : "/Euro2016/controller/controller.php",
+      data : {ws : 'matchs', action : 'getTour'},
+      success : function (response){
+        for(var i = 0; i < JSON.parse(response).length;i++){
+          $("ul.tour").append("<li class='tab col s3'><a onClick='chargerMatch("+ JSON.parse(response)[i].idTour  +")' class='showMatch' id="+ JSON.parse(response)[i].idTour +">"+ JSON.parse(response)[i].nomTour + "</a></li>");
+        }
+        $(".showMatch").first().click();
+      }
+    })
+}
+
+function chargerMatch(id){
+  $("table.matchs tbody").empty();
+
+  $.ajax({
+    method : "POST",
+    url : "/Euro2016/controller/controller.php",
+    data : {ws : 'matchs', action : 'getMatchTour', idTour : id,idUser : $("#idUser").val()},
+    success : function (response){
+      for(var i = 0; i < JSON.parse(response).length;i++){
+        $("table.matchs tbody").append("<tr><td>" + JSON.parse(response)[i].equipe1 + " VS " + JSON.parse(response)[i].equipe2
+         + "</td><td>"+ JSON.parse(response)[i].dateMatch
+         + "</td><td><a class='waves-effect waves-light btn'>Parier</a></td></tr>")
+      }
+    }
+  });
+}

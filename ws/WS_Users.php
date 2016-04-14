@@ -27,7 +27,7 @@ class WS_Users implements IWebServiciable {
                         "password" => $_POST['password']
                     ];
 
-                    $sql = "SELECT nom,prenom,mail,DateNaissance,Pseudo,estAdmin FROM User WHERE mail = '".$array['login']."' AND MotDePasse ='".$array['password']."'";
+                    $sql = "SELECT id,nom,prenom,mail,DateNaissance,Pseudo,estAdmin FROM User WHERE mail = '".$array['login']."' AND MotDePasse ='".$array['password']."'";
 
                     return returnOneLine($sql);
 

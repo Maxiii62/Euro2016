@@ -4,7 +4,7 @@ function getConnexion(){
 
 try
 {
-    $pdo = new PDO('mysql:host=localhost:8889;dbname=ProjetWebService', 'root', 'root');
+    $pdo = new PDO('mysql:host=localhost:3306;dbname=Beteclic', 'root', '');
     return $pdo;
 }
 catch(Exception $e)

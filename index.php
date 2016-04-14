@@ -5,7 +5,11 @@
 
 <body>
 
-  <?php include 'fragment/menu.php'; ?>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <img src="materialize/img/UEFA_Euro_2016_logo.png" alt="Logo Euro 2016 - FRANCE">
+    </div>
+  </nav>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -104,27 +108,27 @@
 
   <div id="modalConnexion" class="modal">
     <div class="row">
-   <form class="col s12">
      <div class="modal-content">
       <h4>Connexion</h4><hr>
         <div class="row">
           <div class="input-field col s10">
             <i class="material-icons prefix">account_circle</i>
-            <input id="icon_prefix" type="text" class="validate">
+            <input id="login" type="text" class="validate">
             <label for="icon_prefix">Login</label>
           </div>
           <div class="input-field col s10">
             <i class="material-icons prefix">vpn_key</i>
-            <input id="icon_telephone" type="tel" class="validate">
-            <label for="icon_telephone">Password</label>
+            <input id="password" type="password" class="validate">
+            <label for="icon_prefix">Password</label>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="home.php" class="modal-action modal-close waves-effect waves-green btn-flat ">Connexion</a>
+        <a class="modal-action modal-close waves-effect waves-green btn-flat" id="sbmtCnx" >Connexion</a>
         <a class="modal-action modal-close waves-effect waves-green btn-flat closeModal">Fermer</a>
       </div>
-   </form>
+
+      <div id="badRQ" style="color:red;" class="hidden"></div>
  </div>
 
   </div>

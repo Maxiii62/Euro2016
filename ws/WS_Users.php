@@ -27,45 +27,14 @@ class WS_Users implements IWebServiciable {
                         "password" => $_POST['password']
                     ];
 
-                    $sql = "SELECT lastname,firstname,mail,login,password FROM Users WHERE login = '".$array['login']."' AND password ='".$array['password']."'";
+                    $sql = "SELECT nom,prenom,mail,DateNaissance,Pseudo,estAdmin FROM User WHERE mail = '".$array['login']."' AND MotDePasse ='".$array['password']."'";
 
                     return returnOneLine($sql);
 
 
-               case getDetailsUser:
-
-                $sql = "SELECT lastname,firstname,mail,login FROM Users WHERE login = '".$_POST['login']."'";
-
-                return returnOneLine($sql);
-
-               case updateUser:
-                $array = [
-                    "lastName" => $_POST['lastName'],
-                    "firstName" => $_POST['firstName'],
-                    "mail" => $_POST['mail'],
-                    "login" => $_POST['login'],
-                    "password" => $_POST['password'],
-                ];
-
-
-                return execReqWithoutResult("UPDATE users SET lastName='".$array['lastName']."',firstName='".$array['firstName']."',login='".$array['login']."',mail='".$array['mail']."',password='".$array['password']."' WHERE login = '".$_POST['login']."'");
-
-
-            case BE_SUBSCRIBED:
-
-                    $array = [
-                        "login" => $_POST['login'],
-                        "firstname" => $_POST['firstname'],
-                        "lastname" => $_POST['lastname'],
-                        "email" => $_POST['email'],
-                        "password" => $_POST['password']
-                    ];
-
-
-                      return execReqWithoutResult("INSERT INTO users(lastname, firstname, mail, login, password) VALUES ('".$array['lastname']."','".$array['firstname']."','".$array['email']."','".$array['login']."','".$array['password']."')");
-             default:
+              default:
                 Helper::ThrowAccessDenied();
-                break;
+              break;
         }
    }
 }

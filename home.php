@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <?php include 'fragment/header.php'; ?>
+  <?php
+    include 'fragment/header.php';
+
+    if (!isset($_SESSION['monUserCo'])){
+          header('Location: /Euro2016/index.php');
+    }
+  ?>
 
 <body>
 

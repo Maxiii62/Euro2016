@@ -1,10 +1,16 @@
 
-  <nav class="white" role="navigation">
+  <nav class="white" role="navigation";>
     <div class="nav-wrapper container">
-        <img src="materialize/img/UEFA_Euro_2016_logo.png" alt="Logo Euro 2016 - FRANCE">
+        <div class="user">
+            <?php echo '<a class="left userInfos">'.$_SESSION['monUserCo']['nom'].' '. $_SESSION['monUserCo']['prenom'].' - 0 point<a>'; ?>
+
+                <img class="right" src="materialize/img/UEFA_Euro_2016_logo.png" alt="Logo Euro 2016 - FRANCE">
+            </div>
+
 
       <ul class="right hide-on-med-and-down">
-          <?php echo '<li class="userInfos">'.$_SESSION['monUserCo']['nom'].' '. $_SESSION['monUserCo']['prenom'].' - 0 point<li>'; ?>
+          <?php //echo '<li class="userInfos">'.$_SESSION['monUserCo']['nom'].' '. $_SESSION['monUserCo']['prenom'].' - 0 point<li>'; ?>
+
         <li><a href="home.php">Accueil</a></li>
         <li><a href="mesParis.php">Mes paris</a></li>
 

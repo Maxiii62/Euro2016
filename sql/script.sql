@@ -1,5 +1,11 @@
-CREATE DATABASE Beteclic;
-USE Beteclic;
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Client :  127.0.0.1
+-- Généré le :  Jeu 14 Avril 2016 à 23:04
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -97,10 +103,46 @@ CREATE TABLE IF NOT EXISTS `rencontre` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Equipe1` varchar(30) DEFAULT NULL,
   `Equipe2` varchar(30) DEFAULT NULL,
-  `idTour` INT DEFAULT NULL,
+  `idTour` int(11) DEFAULT NULL,
   `DateMatch` date DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `rencontre`
+--
+
+INSERT INTO `rencontre` (`ID`, `Equipe1`, `Equipe2`, `idTour`, `DateMatch`) VALUES
+(1, 'FRANCE', 'ALLEMAGNE', 1, '2016-04-17'),
+(2, 'ITALIE', 'PORTUGAL', 2, '2016-04-19');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tour`
+--
+
+CREATE TABLE IF NOT EXISTS `tour` (
+  `Idtour` int(11) NOT NULL AUTO_INCREMENT,
+  `Nomtour` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`Idtour`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+--
+-- Contenu de la table `tour`
+--
+
+INSERT INTO `tour` (`Idtour`, `Nomtour`) VALUES
+(1, 'POULE A'),
+(2, 'POULE B'),
+(3, 'POULE C'),
+(4, 'POULE D'),
+(5, 'POULE E'),
+(6, 'POULE F'),
+(7, '1/8 finale'),
+(8, '1/4 finale'),
+(9, '1/2 finale'),
+(10, 'finale');
 
 -- --------------------------------------------------------
 
@@ -128,24 +170,6 @@ INSERT INTO `user` (`ID`, `Nom`, `Prenom`, `MotDePasse`, `Mail`, `DateNaissance`
 (1, 'Eduardo', 'Cavalcanti', '0000', 'eduardo.caval@gmail.com', '0000-00-00', 'Edu', 0),
 (2, 'Raija', 'Peltomaa', '0000', 'toto@gmail.com', '0000-00-00', 'RaiPel', 1),
 (3, 'Phan', 'Thi', '0000', 'phan.thi@gmail.com', '0000-00-00', 'Phaaan', 0);
-
-CREATE TABLE IF NOT EXISTS `tour` (
-  `Idtour` int(11) NOT NULL AUTO_INCREMENT,
-  `Nomtour` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`Idtour`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
-
-INSERT INTO `tour` (`idtour`, `nomtour`) VALUES
-(1, 'POULE A'),
-(2, 'POULE B'),
-(3, 'POULE C'),
-(4, 'POULE D'),
-(5, 'POULE E'),
-(6, 'POULE F'),
-(7, '1/8 finale'),
-(8, '1/4 finale'),
-(9, '1/2 finale'),
-(10, 'finale');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

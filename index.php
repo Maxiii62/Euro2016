@@ -121,7 +121,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a href="/accueil.php" class="modal-action modal-close waves-effect waves-green btn-flat ">Connexion</a>
+        <a href="home.php" class="modal-action modal-close waves-effect waves-green btn-flat ">Connexion</a>
         <a class="modal-action modal-close waves-effect waves-green btn-flat closeModal">Fermer</a>
       </div>
    </form>

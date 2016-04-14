@@ -59,3 +59,17 @@ footer.page-footer {
 .logoEuroContainer{
   color:red;
 }
+
+.iconMatch{
+  background-image:url("../img/pelouse.jpg");
+}
+
+.loose{
+  color:red;
+}
+.gain{
+  color:green;
+}
+.userInfos{
+  color:black;
+}

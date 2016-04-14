@@ -8,7 +8,7 @@
         <?php include 'fragment/menu.php'; ?>
         <h3>Gestion Utilisateur</h3>
         
-        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red" href="CreatUser.php"><i class="material-icons">add</i></a>
          <table>
         <thead>
           <tr>

@@ -8,6 +8,8 @@ echo '<head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!-- JS -->
+   <script src="materialize/js/canvasjs.min.js"></script>
 </head>';
 
 ?>

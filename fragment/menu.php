@@ -5,7 +5,7 @@
         <img src="materialize/img/UEFA_Euro_2016_logo.png" alt="Logo Euro 2016 - FRANCE">
 
       <ul class="right hide-on-med-and-down">
-        <li class="userInfos">'.$_SESSION['monUserCo']['nom'].' '. $_SESSION['monUserCo']['prenom'].'<li>
+        <li class="userInfos">'.$_SESSION['monUserCo']['nom'].' '. $_SESSION['monUserCo']['prenom'].' - 0 point<li>
         <li><a href="home.php">Accueil</a></li>
         <li><a href="mesParis.php">Mes paris</a></li>
         <li><a href="#">Panel Admin</a></li>

@@ -18,12 +18,12 @@
             </thead>
             <tbody>
               <tr>
-                <td>Allemagne vs Italie</td>
+                <td><a href="pariDetails.php">Allemagne vs Italie</a></td>
                 <td>V</td>
                 <td class="gain">V</td>
               </tr>
               <tr>
-                <td>Espagne vs France</td>
+                <td><a href="pariDetails.php">Espagne vs France</a></td>
                 <td>D</td>
                 <td class="loose">D</td>
               </tr>

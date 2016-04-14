@@ -3,9 +3,9 @@
         <img src="materialize/img/UEFA_Euro_2016_logo.png" alt="Logo Euro 2016 - FRANCE">
 
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">Gestion User</a></li>
-            <li><a href="#!">Gestion Match</a></li>
-            <li><a href="#!">Statistique</a></li>
+            <li><a href="GestionUser.php">Gestion User</a></li>
+            <li><a href="GestionMatch.php">Gestion Match</a></li>
+            <li><a href="Statistique.php">Statistique</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
             <li class="userInfos"> Jean DUPOND - 62 Point(s)<li>

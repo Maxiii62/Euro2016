@@ -1,31 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Euro 2016 - Pari en ligne</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
+  <?php include 'fragment/header.php'; ?>
+
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <!--<a id="logo-container" href="#" class="brand-logo">Logo</a>-->
-        <img src="materialize/img/UEFA_Euro_2016_logo.png" alt="Logo Euro 2016 - FRANCE">
 
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Accueil</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Accueil</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+  <?php include 'fragment/menu.php'; ?>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -120,32 +100,7 @@
     <div class="parallax"><img src="materialize/img/dortmund.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-  <footer class="page-footer teal">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Beteclic</h5>
-          <p class="grey-text text-lighten-4">Beteclic est une sociète fondée durant le projet de SOA à but non lucratif permettant d'obtenir chacun notre module.</p>
 
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Contact</h5>
-          <ul>
-            <li><a class="white-text" href="#!"></a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        <a class="brown-text text-lighten-3">EPSI</a>
-      </div>
-    </div>
-  </footer>
 
   <div id="modalConnexion" class="modal">
     <div class="row">
@@ -173,12 +128,8 @@
  </div>
 
   </div>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="materialize/js/materialize.js"></script>
-  <script src="materialize/js/init.js"></script>
-  <script src="materialize/js/script.js"></script>
-
   </body>
+
+  <?php include 'fragment/footer.php'; ?>
+
 </html>

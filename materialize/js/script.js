@@ -203,3 +203,17 @@ function chargerListeMatch(){
        }
    })
 }
+
+function loadTeam(){
+  $(".team select").empty();
+   $.ajax({
+     method : "POST",
+       url : "/Euro2016/controller/controller.php",
+       data : {ws : 'matchs', action : 'teams'},
+       success : function(response){
+         for(var i = 0; i < JSON.parse(response).length;i++){
+             $("team select").append("<option value='"+JSON.parse(response)[i].id + "'>" + JSON.parse(response)[i].nom + "<option>" );
+         }
+       }
+   })
+}

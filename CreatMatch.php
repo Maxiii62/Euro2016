@@ -8,21 +8,15 @@
         <?php include 'fragment/menu.php'; ?>
         <h3>Création d'un nouveau Match</h3>
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s6 team">
                 <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">France</option>
-                    <option value="2">Allemagne</option>
-                    <option value="3">Espagne</option>
+                    <option value="" disabled selected>Choissez votre equipe</option>
                 </select>
                 <label>Equipe A</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s6 team">
                 <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">France</option>
-                    <option value="2">Allemagne</option>
-                    <option value="3">Espagne</option>
+                  <option value="" disabled selected>Choissez votre equipe</option>
                 </select>
                 <label>Equipe B</label>
             </div>
@@ -30,10 +24,8 @@
         <div class="row">
             <div class="input-field col s6">
                 <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Poule 1</option>
-                    <option value="2">Poule 2</option>
-                    <option value="3">Poule 3</option>
+                    <option value="" disabled selected>Phase du tournoi</option>
+
                 </select>
                 <label>Poule</label>
             </div>
@@ -56,6 +48,6 @@
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
 
-
+    loadTeam();
 
 </script>

@@ -22,13 +22,7 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>France - Inde/td>
-                    <td>25 - 0</td>
-                    <td>France</td>
-                    <td><button class="waves-effect waves-teal btn-flat"><i class="large material-icons">mode_edit</i></button><button class="waves-effect waves-teal btn-flat"><i class="material-icons">delete_forever</i></button></td>
-                </tr>
-            </tbody>
+                </tbody>
         </table>
         <p></p>
         <?php include 'fragment/footer.php'; ?>

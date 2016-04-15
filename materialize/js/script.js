@@ -24,7 +24,7 @@ $( "#sbmtCnx" ).click(function() {
                            });
                        };
                    }else{
-                     Materialize.toast('Mauvaises informations de connexions', 4000)
+                     Materialize.toast('Mauvaises informations de connexions', 4000);
                    }
                }
           });
@@ -78,3 +78,38 @@ $(".filterMatch").on("change",function(){
 
   })
 })
+
+$(".creerUser").on("click",function(){
+    $.ajax({
+      method : "POST",
+        url : "/Euro2016/controller/controller.php",
+        data : {ws : 'users', action : 'subscribe',Nom : $("#last_name").val() ,Prenom : $("#first_name").val(), MotDePasse : $("#password").val(),Mail : $("#email").val() , DateNaissance : $("#date").val() , Pseudo : $("#pseudo").val(), estAdmin : $("#admin").is(":checked")},
+        success : function(response){
+          Materialize.toast('Utilisateur a bien été ajouté !', 4000);
+        },error : function(err){
+          Materialize.toast(err, 4000);
+        }
+    })
+})
+
+function chargerUser(){
+  var check = ";"
+  $("table.users tbody").empty();
+  $.ajax({
+    method : "POST",
+      url : "/Euro2016/controller/controller.php",
+      data : {ws : 'users', action : 'list'},
+      success : function(response){
+        for(var i = 0; i < JSON.parse(response).length;i++){
+          if (JSON.parse(response)[i].estAdmin == 1){
+            $("table.users tbody").append("<tr><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "</td><td>" + JSON.parse(response)[i].mail + "</td><td> "+ JSON.parse(response)[i].pseudo + "</td><td><i class='material-icons'>done</i></td>"
+            + "<td><button class='waves-effect waves-teal btn-flat'><i class='large material-icons'>mode_edit</i></button><button class='waves-effect waves-teal btn-flat'><i class='material-icons'>delete_forever</i></button></td></tr>");
+
+          }else{
+            $("table.users tbody").append("<tr><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "</td><td>" + JSON.parse(response)[i].mail + "</td><td> "+ JSON.parse(response)[i].pseudo + "</td><td>" +
+            "<td><button class='waves-effect waves-teal btn-flat'><i class='large material-icons'>mode_edit</i></button><button class='waves-effect waves-teal btn-flat'><i class='material-icons'>delete_forever</i></button></td></tr>");
+          }
+        }
+      }
+  })
+}

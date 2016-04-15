@@ -7,6 +7,7 @@ const BE_SUBSCRIBED = 'subscribe';
 const getDetailsUser = 'getDetailsUser';
 const updateUser = 'updateUser';
 const GET_ALL_USER = 'list';
+const REMOVE_USER = 'removeUser';
 
 class WS_Users implements IWebServiciable {
 
@@ -37,6 +38,12 @@ class WS_Users implements IWebServiciable {
               case GET_ALL_USER :
                   $sql = "SELECT id,nom,prenom,estAdmin,mail,pseudo FROM user";
                   return returnOneArray($sql);
+              case REMOVE_USER :
+                  $sql = "DELETE FROM pari WHERE idUser=".$_POST["idUser"];
+                  execReqWithoutResult($sql);
+
+                  $sql = "DELETE FROM user WHERE id=".$_POST["idUser"];
+                  return execReqWithoutResult($sql);
               default:
                 Helper::ThrowAccessDenied();
               break;

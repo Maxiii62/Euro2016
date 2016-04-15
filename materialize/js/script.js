@@ -102,14 +102,26 @@ function chargerUser(){
       success : function(response){
         for(var i = 0; i < JSON.parse(response).length;i++){
           if (JSON.parse(response)[i].estAdmin == 1){
-            $("table.users tbody").append("<tr><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "</td><td>" + JSON.parse(response)[i].mail + "</td><td> "+ JSON.parse(response)[i].pseudo + "</td><td><i class='material-icons'>done</i></td>"
-            + "<td><button class='waves-effect waves-teal btn-flat'><i class='large material-icons'>mode_edit</i></button><button class='waves-effect waves-teal btn-flat'><i class='material-icons'>delete_forever</i></button></td></tr>");
+            $("table.users tbody").append("<tr id='"+ JSON.parse(response)[i].id +"'><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "</td><td>" + JSON.parse(response)[i].mail + "</td><td> "+ JSON.parse(response)[i].pseudo + "</td><td><i class='material-icons'>done</i></td>"
+            + "<td><button class='waves-effect waves-teal btn-flat' onClick='updateUser()'><i class='large material-icons'>mode_edit</i></button><button class='waves-effect waves-teal btn-flat' onClick='removeUser(" + JSON.parse(response)[i].id  +")'><i class='material-icons'>delete_forever</i></button></td></tr>");
 
           }else{
-            $("table.users tbody").append("<tr><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "</td><td>" + JSON.parse(response)[i].mail + "</td><td> "+ JSON.parse(response)[i].pseudo + "</td><td>" +
-            "<td><button class='waves-effect waves-teal btn-flat'><i class='large material-icons'>mode_edit</i></button><button class='waves-effect waves-teal btn-flat'><i class='material-icons'>delete_forever</i></button></td></tr>");
+            $("table.users tbody").append("<tr id='"+ JSON.parse(response)[i].id +"'><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "</td><td>" + JSON.parse(response)[i].mail + "</td><td> "+ JSON.parse(response)[i].pseudo + "</td><td>" +
+            "<td><button class='waves-effect waves-teal btn-flat'><i class='large material-icons EditUser mode_edit</i></button><button class='waves-effect waves-teal btn-flat' onClick='removeUser("+ JSON.parse(response)[i].id +")'><i class='material-icons removeUser'>delete_forever</i></button></td></tr>");
           }
         }
+      }
+  })
+}
+
+function removeUser(id){
+  $.ajax({
+    method : "POST",
+      url : "/Euro2016/controller/controller.php",
+      data : {ws : 'users', action : 'removeUser',idUser : id},
+      success : function(response){
+          Materialize.toast('Utilisateur a bien été supprimé !', 4000);
+          chargerUser();
       }
   })
 }

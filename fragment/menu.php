@@ -1,4 +1,10 @@
+<?php
 
+if(!$_SESSION['monUserCo']){
+    header('Location: /Euro2016/index.php');
+}
+
+ ?>
   <nav class="white" role="navigation";>
     <div class="nav-wrapper container">
         <div class="user">

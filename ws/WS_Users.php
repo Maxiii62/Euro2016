@@ -8,6 +8,7 @@ const getDetailsUser = 'getDetailsUser';
 const updateUser = 'updateUser';
 const GET_ALL_USER = 'list';
 const REMOVE_USER = 'removeUser';
+const CLASSEMENT_user = "classment";
 
 class WS_Users implements IWebServiciable {
 
@@ -46,6 +47,9 @@ class WS_Users implements IWebServiciable {
 
                   $sql = "DELETE FROM user WHERE id=".$_POST["idUser"];
                   return execReqWithoutResult($sql);
+              case CLASSEMENT_user :
+                  $sql = "SELECT nom,prenom,SUM(Points) as total FROM Pari,USER WHERE IDUser = User.ID";
+                  return returnOneArray($sql);
               default:
                 Helper::ThrowAccessDenied();
               break;

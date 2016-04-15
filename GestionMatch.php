@@ -10,7 +10,7 @@
         <h3>Gestion Match</h3>
 
         <a class="btn-floating btn-large waves-effect waves-light red" href="CreatMatch.php"><i class="material-icons">add</i></a>
-        <table>
+        <table class="listMatch">
             <thead>
                 <tr>
                     <th data-field="id">Name</th>
@@ -28,21 +28,13 @@
                     <td>France</td>
                     <td><button class="waves-effect waves-teal btn-flat"><i class="large material-icons">mode_edit</i></button><button class="waves-effect waves-teal btn-flat"><i class="material-icons">delete_forever</i></button></td>
                 </tr>
-                <tr>
-                    <td>Maroc - Roumanie</td>
-                    <td>1 - 2</td>
-                    <td>Roumanie</td>
-                    <td><button class="waves-effect waves-teal btn-flat"><i class="large material-icons">mode_edit</i></button><button class="waves-effect waves-teal btn-flat"><i class="material-icons">delete_forever</i></button></td>
-                </tr>
-                <tr>
-                    <td>Allemagne - Espagne</td>
-                    <td>5 - 4</td>
-                    <td>Allemagne</td>
-                    <td><button class="waves-effect waves-teal btn-flat"><i class="large material-icons">mode_edit</i></button><button class="waves-effect waves-teal btn-flat"><i class="material-icons">delete_forever</i></button></td>
-                </tr>
             </tbody>
         </table>
         <p></p>
         <?php include 'fragment/footer.php'; ?>
     </body>
+
+<script>
+  chargerListeMatch();
+</script>
 </html>

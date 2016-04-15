@@ -134,7 +134,6 @@
         <a class="modal-action modal-close waves-effect waves-green btn-flat closeModal">Fermer</a>
       </div>
 
-      <div id="badRQ" style="color:red;" class="hidden"></div>
  </div>
 
   </div>

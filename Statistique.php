@@ -7,7 +7,7 @@
         <?php include 'fragment/menu.php'; ?>
 
 
-        <div class="row">
+<!--        <div class="row">
 
             <div class="input-field col s3">
                 <select class="filterMatch">
@@ -31,8 +31,8 @@
                 </tbody>
             </table>
         </div>
-    </body>
-    <!--         <h3>Statistique Paris (victoire/égalité/defaite)</h3>
+    </body>-->
+    <h3>Statistique Paris (victoire/égalité/defaite)</h3>
          <script type="text/javascript">
              window.onload = function () {
                  var chart = new CanvasJS.Chart("chartContainer",
@@ -61,7 +61,7 @@
              }
          </script>
          <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-         <p></p>-->
+         <p></p>
     <?php include 'fragment/footer.php'; ?>
 </body>
 <script>

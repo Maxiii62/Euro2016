@@ -8,7 +8,18 @@
   <?php include 'fragment/menu.php'; ?>
 
     <div class="row">
-      <table class="reponsive-table m8">
+
+      <div class="input-field col s3">
+        <select class="filterMatch">
+          <option value="getByUser" selected>Tous</option>
+          <option value="getInProgressByUser">En cours</option>
+          <option value="getWonByUser">Gagnés</option>
+          <option value="getLooseByUser">Perdus</option>
+        </select>
+        <label>Je filtre mes paris sur :</label>
+      </div>
+
+      <table class="reponsive-table m8 paris">
             <thead>
               <tr>
                   <th data-field="id">Match</th>
@@ -17,16 +28,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><a href="pariDetails.php">Allemagne vs Italie</a></td>
-                <td>V</td>
-                <td class="gain">V</td>
-              </tr>
-              <tr>
-                <td><a href="pariDetails.php">Espagne vs France</a></td>
-                <td>D</td>
-                <td class="loose">D</td>
-              </tr>
             </tbody>
       </table>
     </div>
@@ -34,4 +35,8 @@
 
   <?php include 'fragment/footer.php'; ?>
 
+<script>
+ $('select').material_select();
+ $(".filterMatch").change();
+</script>
 </html>

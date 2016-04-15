@@ -60,3 +60,21 @@ function chargerMatch(id){
     }
   });
 }
+
+$(".filterMatch").on("change",function(){
+  $("table.paris tbody").empty();
+
+  $.ajax({
+    method : "POST",
+      url : "/Euro2016/controller/controller.php",
+      data : {ws : 'paris',action : $("select.filterMatch").val(),idUser : $("#idUser").val()},
+      success : function(response){
+        for(var i = 0; i < JSON.parse(response).length;i++){
+          $("table.paris tbody").append("<tr><td><a href='pariDetails.php'>" + JSON.parse(response)[i].Equipe1 + " VS " + JSON.parse(response)[i].Equipe2
+           + "</a></td><td>"+ JSON.parse(response)[i].Score1 + " - " + JSON.parse(response)[i].Score2
+           + "</td><td><a class='waves-effect waves-light btn'>" + JSON.parse(response)[i].Points + "</a></td></tr>")
+        }
+      }
+
+  })
+})

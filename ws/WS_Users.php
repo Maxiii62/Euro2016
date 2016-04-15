@@ -21,7 +21,6 @@ class WS_Users implements IWebServiciable {
         switch ($_POST['action']){
               case GET_CONNEXION_USER:
 
-
                     $array = [
                         "login" => $_POST['login'],
                         "password" => $_POST['password']
@@ -30,8 +29,12 @@ class WS_Users implements IWebServiciable {
                     $sql = "SELECT id,nom,prenom,mail,DateNaissance,Pseudo,estAdmin FROM User WHERE mail = '".$array['login']."' AND MotDePasse ='".$array['password']."'";
 
                     return returnOneLine($sql);
+              case BE_SUBSCRIBED :
 
+                  $sql = "INSERT INTO user(Nom, Prenom, MotDePasse, Mail, DateNaissance, Pseudo, EstAdmin)
+                         VALUES ('".$_POST['Nom']."',.'".$_POST['Prenom']."','".$_POST['MotDePasse']."','".$_POST['Mail']."',".$_POST['DateNaissance']."','".$_POST['Pseudo']."',".$_POST["estAdmin"].")";
 
+                  return execReqWithoutResult($sql);
               default:
                 Helper::ThrowAccessDenied();
               break;

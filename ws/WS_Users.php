@@ -35,6 +35,8 @@ class WS_Users implements IWebServiciable {
 
                   $sql = "INSERT INTO user(Nom, Prenom, MotDePasse, Mail, DateNaissance, Pseudo, EstAdmin)
                          VALUES ('".$_POST['Nom']."','".$_POST['Prenom']."','".$_POST['MotDePasse']."','".$_POST['Mail']."','".$_POST['DateNaissance']."','".$_POST['Pseudo']."',".$_POST["estAdmin"].")";
+                  execReqWithoutResult($sql);
+
               case GET_ALL_USER :
                   $sql = "SELECT id,nom,prenom,estAdmin,mail,pseudo FROM user";
                   return returnOneArray($sql);

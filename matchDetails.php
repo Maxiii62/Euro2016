@@ -4,7 +4,7 @@
     <?php include 'fragment/header.php'; ?>
 	<body>
 		<?php include 'fragment/menu.php'; ?>
-		<div class="container row">
+		<div class="row">
 			<h3>Islande VS Belgique</h3>
 
 			<table>
@@ -15,9 +15,10 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input class="with-gap" name="group1" type="radio" id="test3"></td>
-						<td><input type="radio" value="Match Nul"></td>
-						<td><input type="radio" value="Belgique"></td>
+						<td></td>
+						<td><input name="group1" type="radio" id="test1"/></td>
+						<td><input type="radio" value="Belgique"></td></form>
+						
 					</tr>
 					<tr>
 						<td><input type="text" id="score1"></td>

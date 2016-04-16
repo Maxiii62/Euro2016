@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 15 Avril 2016 à 11:37
+-- Généré le :  Sam 16 Avril 2016 à 11:56
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -32,6 +32,14 @@ CREATE TABLE IF NOT EXISTS `affronte` (
   `Buts` int(11) DEFAULT NULL,
   PRIMARY KEY (`IDRencontre`,`IDEquipe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `affronte`
+--
+
+INSERT INTO `affronte` (`IDRencontre`, `IDEquipe`, `Buts`) VALUES
+(1, 1, 2),
+(1, 15, 0);
 
 -- --------------------------------------------------------
 
@@ -112,19 +120,24 @@ CREATE TABLE IF NOT EXISTS `rencontre` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Equipe1` varchar(30) DEFAULT NULL,
   `Equipe2` varchar(30) DEFAULT NULL,
+  `Score1` int(11) DEFAULT NULL,
+  `Score2` int(11) DEFAULT NULL,
+  `IDGagnant` int(11) DEFAULT NULL,
   `idTour` int(11) DEFAULT NULL,
   `DateMatch` date DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `rencontre`
 --
 
-INSERT INTO `rencontre` (`ID`, `Equipe1`, `Equipe2`, `idTour`, `DateMatch`) VALUES
-(1, 'FRANCE', 'ALLEMAGNE', 1, '2016-04-17'),
-(2, 'ITALIE', 'PORTUGAL', 2, '2016-04-19'),
-(3, 'POLOGNE', 'ROUMANIE', 1, '2016-04-16');
+INSERT INTO `rencontre` (`ID`, `Equipe1`, `Equipe2`, `Score1`, `Score2`, `IDGagnant`, `idTour`, `DateMatch`) VALUES
+(1, 'FRANCE', 'ALLEMAGNE', 2, 0, NULL, 1, '2016-04-17'),
+(2, 'ITALIE', 'PORTUGAL', NULL, NULL, NULL, 2, '2016-04-19'),
+(3, 'BRÉSIL', 'ROUMANIE', NULL, NULL, NULL, 1, '2016-04-16'),
+(4, 'PORTUGAL', 'VENEZUELA', 2, 3, NULL, NULL, NULL),
+(5, 'FRANCE', 'ITALIE', 4, 2, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 

@@ -47,7 +47,7 @@ class WS_Matchs implements IWebServiciable {
               //  $sql = "INSERT INTO Rencontre(Equipe1, Equipe2,idTour,dateMatch) VALUES ('".$_POST['equipe1']"','".$_POST['equipe2']"',".$_POST['id'].",'".$_POST['date']."')";
                   return returnOneArray($sql);
               case GET_TEAMS :
-                $sql = "SELECT id,nom FROM EQUIPES";
+                $sql = "SELECT id,nom FROM equipe";
                 return returnOneArray($sql);
               default:
                 Helper::ThrowAccessDenied();

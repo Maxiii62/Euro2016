@@ -8,15 +8,15 @@
         <?php include 'fragment/menu.php'; ?>
         <h3>Création d'un nouveau Match</h3>
         <div class="row">
-            <div class="input-field col s6 team">
-                <select>
-                    <option value="" disabled selected>Choissez votre equipe</option>
+            <div class="input-field col s6">
+                <select class="team">
+                    <option> Equipe B </option>
                 </select>
                 <label>Equipe A</label>
             </div>
-            <div class="input-field col s6 team">
-                <select>
-                  <option value="" disabled selected>Choissez votre equipe</option>
+            <div class="input-field col s6">
+                <select class="team">
+                    <option> Equipe A </option>
                 </select>
                 <label>Equipe B</label>
             </div>
@@ -42,7 +42,6 @@
     </body>
 </html>
 <script>
-    $('select').material_select();
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
